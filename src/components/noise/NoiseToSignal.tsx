@@ -1,13 +1,20 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
+
+type Particle = {
+  left: string;
+  top: string;
+  transitionDelay: string;
+  transform: string;
+};
 
 export default function NoiseToSignal() {
   const [isVisible, setIsVisible] = useState(false);
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
   const sectionRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Generate random positions only on the client to avoid hydration mismatch
     const generatedParticles = [...Array(20)].map(() => ({
       left: `${Math.random() * 100}%`,
@@ -15,6 +22,7 @@ export default function NoiseToSignal() {
       transitionDelay: `${Math.random() * 1000}ms`,
       transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setParticles(generatedParticles);
 
     const observer = new IntersectionObserver(
@@ -40,7 +48,7 @@ export default function NoiseToSignal() {
     >
       {/* Noise Layer - Floating fragments that collapse into the signal */}
       <div className="absolute inset-0 pointer-events-none">
-        {particles.map((p, i) => (
+        {particles.map((p: Particle, i: number) => (
           <div
             key={i}
             className={`absolute w-px h-px bg-foreground transition-all duration-1000 ease-in-out
@@ -88,7 +96,7 @@ export default function NoiseToSignal() {
           <div className={`max-w-xl mx-auto text-center transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-60 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <p className="text-lg md:text-xl font-light leading-relaxed">
               Fragmented feeds, algorithm-driven anxiety, and a constant race for a finish line that keeps moving.
-              We've filtered out the static.
+              We&apos;ve filtered out the static.
             </p>
           </div>
         </div>

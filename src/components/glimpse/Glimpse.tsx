@@ -2,8 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 
-const Artifact = ({ title, description, children }) => (
-  <div className="group relative p-8 border border-foreground/10 bg-foreground/5 backdrop-blur-md rounded-sm transition-all duration-500 hover:border-accent/50 hover:bg-foreground/10">
+const Artifact = ({ title, description, children }: { title: string; description: string; children: React.ReactNode }) => (  <div className="group relative p-8 border border-foreground/10 bg-foreground/5 backdrop-blur-md rounded-sm transition-all duration-500 hover:border-accent/50 hover:bg-foreground/10">
     <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-accent opacity-20 group-hover:opacity-100 transition-opacity" />
     <div className="relative z-10">
       <h3 className="text-xs uppercase tracking-[0.3em] opacity-40 font-bold mb-2">{title}</h3>

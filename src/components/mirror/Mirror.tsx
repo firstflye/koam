@@ -49,7 +49,7 @@ export default function Mirror() {
                 The 2 AM edit. The anxiety of the reach-drop. The feeling of being a ghost in your own machine.
               </p>
               <p className="text-lg md:text-xl opacity-60 font-light leading-relaxed">
-                You've spent years building a presence on land you don't own, obeying algorithms that don't know your name.
+                You&apos;ve spent years building a presence on land you don&apos;t own, obeying algorithms that don&apos;t know your name.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Mirror() {
                   The Shift
                 </h3>
                 <p className="text-md opacity-80 font-light leading-relaxed">
-                  We built Koam because we were tired of the race. We realized that the only way to stop being a "content creator" was to start being an <span className="text-accent font-bold italic">architect.</span>
+                  We built Koam because we were tired of the race. We realized that the only way to stop being a &quot;content creator&quot; was to start being an <span className="text-accent font-bold italic">architect.</span>
                 </p>
                 <p className="text-md opacity-80 font-light leading-relaxed">
                   This is a sanctuary for the vision. A place where your attention is treated as currency, not a product to be sold to the highest bidder.
