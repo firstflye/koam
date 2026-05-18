@@ -10,35 +10,31 @@ export interface Database {
   public: {
     Tables: {
       waitlist: {
-        Create: {
-          email: string
-          status?: string
-        }
-        Update: {
-          email?: string
-          status?: string
-        }
-        Insert: {
-          email: string
-          status?: string
-        }
-        Select: {
+        Row: {
           id: string
           email: string
           created_at: string
           status: string
         }
+        Insert: {
+          email: string
+          id?: string
+          created_at?: string
+          status?: string
+        }
+        Update: {
+          email?: string
+          id?: string
+          created_at?: string
+          status?: string
+        }
       }
     }
-    Views: {
-      []: unknown
-    }
-    Functions: {
-      []: unknown
-    }
+    Views: { [_: string]: unknown }
+    Functions: { [_: string]: unknown }
   }
 }
 
-export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Select']
+export type Tables<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Row']
 export type TableInsert<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Insert']
 export type TableUpdate<T extends keyof Database['public']['Tables']> = Database['public']['Tables'][T]['Update']
