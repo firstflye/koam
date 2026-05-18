@@ -28,7 +28,6 @@ export default function CognitiveGrid({ children }: { children: React.ReactNode 
               width="100"
               height="100"
               patternUnits="userSpaceOnUse"
-              patternCrossection="none"
             >
               <path
                 d="M 100 0 L 0 0 0 100"
