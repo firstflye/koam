@@ -5,6 +5,7 @@ import Hero from '@/components/hero/Hero';
 import NoiseToSignal from '@/components/noise/NoiseToSignal';
 import Mirror from '@/components/mirror/Mirror';
 import Glimpse from '@/components/glimpse/Glimpse';
+import GrowthTrajectory from '@/components/growth/GrowthTrajectory';
 import Waitlist from '@/components/waitlist/Waitlist';
 import CognitiveGrid from '@/components/grid/CognitiveGrid';
 
@@ -16,6 +17,7 @@ export default function Page() {
         <NoiseToSignal />
         <Mirror />
         <Glimpse />
+        <GrowthTrajectory />
         <Waitlist />
       </main>
     </CognitiveGrid>
